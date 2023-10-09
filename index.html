@@ -24,14 +24,14 @@
 				<header class="header">
 					<div class="container">
 						<div class="header__inner">
-							<a class="header__logo" href="./">@nmasliy</a>
-							<nav class="header__nav">
-								<ul class="header__list">
-									<li class="header__item"><a class="header__link" href="#benefits">Преимущества</a></li>
-									<li class="header__item"><a class="header__link" href="#about">Обо мне</a></li>
-									<li class="header__item"><a class="header__link" href="#projects">Портфолио</a></li>
-									<li class="header__item"><a class="header__link" href="#reviews">Отзывы</a></li>
-									<li class="header__item"><a class="header__link" href="#contacts">Контакты</a></li>
+							<a class="header__logo logo" href="./">@nmasliy</a>
+							<nav class="header__nav nav">
+								<ul class="nav__list">
+									<li class="nav__item"><a class="nav__link" href="#benefits">Преимущества</a></li>
+									<li class="nav__item"><a class="nav__link" href="#about">Обо мне</a></li>
+									<li class="nav__item"><a class="nav__link" href="#projects">Портфолио</a></li>
+									<li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
+									<li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -156,36 +156,45 @@
 					<ul class="benefits__list">
 						<li class="benefits__item">
 							<div class="benefits__item-inner">
-								<div class="benefits__num">4+</div>
+								<div class="benefits__num"><span class="benefits__num-value">4</span>+</div>
 								<div class="benefits__num-caption">года</div>
 								<div class="benefits__text">опыта <br> вёрстки сайтов</div>
-								<img class="benefits__icon" src="img/benefits-icon-1.svg" width="50" height="50"
+								<img class="benefits__icon" src="img/benefits-icon-pc.svg" width="50" height="50"
 									title="Иконка: работа за компьютером" />
 							</div>
 						</li>
 						<li class="benefits__item">
 							<div class="benefits__item-inner">
-								<div class="benefits__num">90+</div>
+								<div class="benefits__num"><span class="benefits__num-value">90</span>+</div>
 								<div class="benefits__num-caption">проектов</div>
 								<div class="benefits__text">для компаний, предпринимателей и&nbsp;фрилансеров</div>
-								<img class="benefits__icon" src="img/benefits-icon-2.svg" width="50" height="50"
+								<img class="benefits__icon" src="img/benefits-icon-rocket.svg" width="50" height="50"
 									title="Иконка: ракета" />
 							</div>
 						</li>
 						<li class="benefits__item">
 							<div class="benefits__item-inner">
-								<div class="benefits__num">30+</div>
+								<div class="benefits__num"><span class="benefits__num-value">30</span>+</div>
 								<div class="benefits__num-caption">отзывов</div>
-								<div class="benefits__text">от <br> довольных клиентов</div>
-								<img class="benefits__icon" src="img/benefits-icon-3.svg" width="50" height="50"
+								<div class="benefits__text">от моих <br> довольных клиентов</div>
+								<img class="benefits__icon" src="img/benefits-icon-thumb-up.svg" width="50" height="50"
 									title="Иконка: палец вверх" />
 							</div>
 						</li>
 						<li class="benefits__item">
 							<div class="benefits__item-inner">
-								<div class="benefits__icon">i</div>
+								<div class="benefits__num"><span class="benefits__num-value">100</span>%</div>
+								<div class="benefits__num-caption">заказов</div>
+								<div class="benefits__text">выполнено <br> точно в&nbsp;срок</div>
+								<img class="benefits__icon" src="img/benefits-icon-timer.svg" width="50" height="50"
+									title="Иконка: обучение/университет" />
+							</div>
+						</li>
+						<!-- <li class="benefits__item">
+							<div class="benefits__item-inner">
 								<div class="benefits__num">
-									<svg width="38" height="22" viewBox="0 0 38 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<svg class="benefits__num-icon" width="38" height="22" viewBox="0 0 38 22" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
 										<path
 											d="M38.0002 10.9812C38.0002 12.9846 37.5189 14.8339 36.5563 16.5291C35.5936 18.2243 34.2763 19.5599 32.6044 20.536C30.9324 21.512 29.1085 22 27.1325 22C27.0717 22 27.0109 21.9994 26.95 21.9982C25.199 21.9636 24.6082 19.8848 25.3834 18.3143C25.5464 17.984 25.6991 17.6472 25.8415 17.304C26.055 16.7892 26.5752 16.4906 27.1325 16.4906C28.6271 16.4906 29.9064 15.9512 30.9704 14.8725C32.0344 13.7937 32.5664 12.4966 32.5664 10.9812C32.5664 9.46581 32.0344 8.16873 30.9704 7.08997C29.9064 6.01121 28.6271 5.47183 27.1325 5.47183C25.6379 5.47183 24.3586 6.01121 23.2946 7.08997C22.2306 8.16873 21.6987 9.46581 21.6987 10.9812C21.6987 12.9846 21.2173 14.8339 20.2547 16.5291C19.292 18.2243 17.9747 19.5599 16.3028 20.536C14.6308 21.512 12.8195 22 10.8689 22C8.9183 22 7.09435 21.512 5.39706 20.536C3.69977 19.5599 2.38247 18.2243 1.44516 16.5291C0.507847 14.8339 0.0265274 12.9846 0.001194 10.9812C-0.0241394 8.9778 0.457184 7.14134 1.44516 5.47183C2.43313 3.80231 3.75043 2.4667 5.39706 1.465C7.04369 0.463289 8.86764 -0.0247216 10.8689 0.000963181C10.939 0.000963181 11.0092 0.00171936 11.0794 0.00323173C12.7982 0.040236 13.4 2.07617 12.6403 3.61842C12.4679 3.96833 12.307 4.32595 12.1574 4.69129C11.9484 5.20193 11.4207 5.47183 10.8689 5.47183C9.37429 5.47183 8.09499 6.01121 7.03102 7.08997C5.96704 8.16873 5.43506 9.46581 5.43506 10.9812C5.43506 12.5223 5.96704 13.8322 7.03102 14.911C8.09499 15.9898 9.37429 16.5163 10.8689 16.4906C12.3636 16.4906 13.6429 15.9641 14.7068 14.911C15.7708 13.8579 16.3028 12.548 16.3028 10.9812C16.3028 9.00349 16.7841 7.16702 17.7467 5.47183C18.7094 3.77663 20.0267 2.44102 21.6987 1.465C23.3706 0.488974 25.1819 0.000963181 27.1325 0.000963181C29.0831 0.000963181 30.9071 0.488974 32.6044 1.465C34.3017 2.44102 35.619 3.77663 36.5563 5.47183C37.4936 7.16702 37.9749 9.00349 38.0002 10.9812Z"
 											fill="#161616" />
@@ -193,10 +202,10 @@
 								</div>
 								<div class="benefits__num-caption">саморазвитие</div>
 								<div class="benefits__text">постоянное изучение и&nbsp;применение новых технологий</div>
-								<img class="benefits__icon" src="img/benefits-icon-4.svg" width="50" height="50"
+								<img class="benefits__icon" src="img/benefits-icon-study.svg" width="50" height="50"
 									title="Иконка: обучение/университет" />
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -223,7 +232,9 @@
 							</p>
 							<p class="about__text">
 								Я готов помочь вам с решением любых проблем, связанных с визуальной составляющей сайта.
-								Можете ознакомиться с <a class="about__link" href="#projects"> моими работами в портфолио.</a>
+								Можете ознакомиться с моими работами в <a class="about__link" href="#projects">портфолио</a>, а так же
+								моим
+								<a class="about__link" href="./cv.html"> резюме.</a>
 							</p>
 
 						</div>
@@ -231,15 +242,16 @@
 							<h4 class="section__subtitle subtitle">Опыт работы</h4>
 							<div class="about__heading">2020 - настоящее время</div>
 							<hr>
-							<p class="about__text">Занимаюсь вёрсткой сайтов на фрилансе и сотрудничаю с компаниями с 2020
+							<p class="about__text">Занимаюсь вёрсткой сайтов на фрилансе и сотрудничаю с компаниями с&nbsp;2020
 								года.
 							</p>
-							<p class="about__text">Выполнил более 90 коммерческих проектов по направлениям:</p>
+							<!-- <p class="about__text color-accent"><b>Выполнил более 90 коммерческих проектов по категориям:</b></p> -->
+							<p class="about__text">Выполнил более 90 коммерческих проектов по основным категориям:</p>
 							<ul class="about__list">
-								<li class="about__item">Адаптивная вёрстка по макету из Figma, Photoshop и т.д.</li>
-								<li class="about__item">Внесение правок в существующие сайты</li>
-								<li class="about__item">Оптимизация скорости загрузки сайтов</li>
-								<li class="about__item">Внедрение JavaScript и CSS анимаций</li>
+								<li class="about__item">Адаптивная вёрстка по макету из&nbsp;Figma, Photoshop</li>
+								<li class="about__item">Внесение правок и исправление ошибок на сайтах</li>
+								<li class="about__item">Оптимизация скорости загрузки&nbsp;страниц</li>
+								<li class="about__item">Внедрение JavaScript и&nbsp;CSS&nbsp;анимаций</li>
 							</ul>
 							<div class="about__footer">
 								<p class="about__text about__text--fw-medium">Открыт к проектному сотрудничеству / долгосрочной работе
@@ -320,10 +332,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="about__image-wrapper">
-						<img class="about__image" src="img/about.svg" width="500" height="364"
-							alt="Парень занимается программированием">
-					</div>
+					<img class="about__image" src="img/about.svg" width="500" height="364"
+						alt="Парень занимается программированием">
 				</div>
 			</div>
 		</section>
@@ -449,129 +459,39 @@
 					<ul class="projects__list">
 						<li class="projects__item">
 							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-1.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-kitaystroy.jpg" width="500" height="320"
-									alt="Скриншот страницы сайта Kitaystroy" loading="lazy">
+								<img class="projects__image" src="img/projects-mjpublic.jpg" width="500" height="320"
+									alt="Скриншот главной страницы сайта MJPublic" loading="lazy">
 							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/kitaystroy/index.html" target="_blank">
-								<h5 class="projects__info-title">Kitaystroy</h5>
-								<h6 class="projects__info-subtitle">Строительная компания</h6>
+							<a class="projects__info" href="https://nmasliy.github.io/MJPublic/" target="_blank">
+								<h5 class="projects__info-title">MJPublic</h5>
+								<h6 class="projects__info-subtitle">Платформа крауд-маркетинга и&nbsp;социального продвижения</h6>
 								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">Многостраничный сайт</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-2.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-tonwork.jpg" width="500" height="320"
-									alt="Скриншот главной страницы сайта TON work" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/ton-work/index.html" target="_blank">
-								<h5 class="projects__info-title">TON Work</h5>
-								<h6 class="projects__info-subtitle">Фриланс-биржа</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">Многостраничный сайт</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-3.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-rappelz.jpg" width="500" height="320"
-									alt="Скриншот свёрстанного email письма Rappelz Excellent" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://kwork.ru/portfolio/8836575" target="_blank">
-								<h5 class="projects__info-title">Rappelz</h5>
-								<h6 class="projects__info-subtitle">Email-письмо для сервера MMORPG игры</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка email письма по макету в Figma</li>
-									<li class="projects__info-item">Поддержка популярных почтовых сервисов</li>
-									<li class="projects__info-item">Табличная вёрстка</li>
-								</ul>
-								<div class="projects__info-link">Перейти к работе</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-4.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-collectoman.jpg" width="500" height="320"
-									alt="Скриншот главной страницы сайта Collectoman" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/collectoman/app/" target="_blank">
-								<h5 class="projects__info-title">Collectoman</h5>
-								<h6 class="projects__info-subtitle">Интернет-аукцион</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">Многостраничный сайт</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-5.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-englishapp.png" width="500" height="320"
-									alt="Скриншот главной страницы приложения Learn English App" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://vue-english-learn-app.netlify.app/" target="_blank">
-								<h5 class="projects__info-title">English Learn App</h5>
-								<h6 class="projects__info-subtitle">Приложение для изучения английского на&nbsp;Vue.js</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Разработка приложения с нуля</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">SPA (Vue.js + Tailwind CSS)</li>
-									<li class="projects__info-item">Анимация</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-6.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-atp.jpg" width="500" height="320"
-									alt="Скриншот главной страницы сайта Auto Tunning Parts" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/ATP/app/" target="_blank">
-								<h5 class="projects__info-title">Auto Tunning Parts</h5>
-								<h6 class="projects__info-subtitle">Магазин авто-тюнинга</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">Многостраничный сайт</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-7.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-stihia.jpg" width="500" height="320"
-									alt="Скриншот главной страницы сайта Stihia Beyond" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/stihiya/dist/index.html" target="_blank">
-								<h5 class="projects__info-title">Stihia Beyond</h5>
-								<h6 class="projects__info-subtitle">Лендинг ко дню космонавтики</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
 									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
 									<li class="projects__info-item">Лендинг</li>
-									<li class="projects__info-item">Разработка кастомного плеера</li>
-									<li class="projects__info-item">Разработка кастомного слайдера</li>
+									<li class="projects__info-item">Анимация</li>
 								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
+								<div class="projects__link-caption">Перейти на сайт</div>
 							</a>
 						</li>
 						<li class="projects__item">
 							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-8.webp" type="image/webp"> -->
+								<img class="projects__image" src="img/balance-wheel.png" width="500" height="320"
+									alt="Скриншот демонстрации теста Morehealth" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/balance-wheel-quiz/" target="_blank">
+								<h5 class="projects__info-title">Morehealth</h5>
+								<h6 class="projects__info-subtitle">Тест с результатом в виде колеса баланса</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Разработка без макета</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Canvas 2D</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
 								<img class="projects__image" src="img/projects-estateturk.jpg" width="500" height="320"
 									alt="Скриншот главной страницы сайта Estateturk" loading="lazy">
 							</picture>
@@ -584,43 +504,155 @@
 									<li class="projects__info-item">Лендинг + Страница с опросом</li>
 									<li class="projects__info-item">Анимация</li>
 								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
+								<div class="projects__link-caption">Перейти на сайт</div>
 							</a>
 						</li>
 						<li class="projects__item">
 							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-9.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/projects-mjpublic.jpg" width="500" height="320"
-									alt="Скриншот главной страницы сайта MJPublic" loading="lazy">
+								<img class="projects__image" src="img/projects-atp.jpg" width="500" height="320"
+									alt="Скриншот главной страницы сайта Auto Tunning Parts" loading="lazy">
 							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/MJPublic/" target="_blank">
-								<h5 class="projects__info-title">MJPublic</h5>
-								<h6 class="projects__info-subtitle">Платформа крауд-маркетинга и&nbsp;социального продвижения</h6>
+							<a class="projects__info" href="https://nmasliy.github.io/ATP/app/" target="_blank">
+								<h5 class="projects__info-title">Auto Tunning Parts</h5>
+								<h6 class="projects__info-subtitle">Магазин авто-тюнинга</h6>
 								<ul class="projects__info-list">
-									<li class="projects__info-item">Вёрстка сайта по макету в Figma</li>
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Многостраничный сайт</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-qomlife.jpg" width="500" height="320"
+									alt="Скриншот страницы сайта QOM.Life" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/qom-life/app/" target="_blank">
+								<h5 class="projects__info-title">QOM.Life</h5>
+								<h6 class="projects__info-subtitle">Сайт криптовалюты</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Лендинг</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-kitaystroy.jpg" width="500" height="320"
+									alt="Скриншот страницы сайта Kitaystroy" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/kitaystroy/index.html" target="_blank">
+								<h5 class="projects__info-title">Kitaystroy</h5>
+								<h6 class="projects__info-subtitle">Строительная компания</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Многостраничный сайт</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-tonwork.jpg" width="500" height="320"
+									alt="Скриншот главной страницы сайта TON work" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/ton-work/index.html" target="_blank">
+								<h5 class="projects__info-title">TON Work</h5>
+								<h6 class="projects__info-subtitle">Фриланс-биржа</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Многостраничный сайт</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-rappelz.jpg" width="500" height="320"
+									alt="Скриншот свёрстанного email письма Rappelz Excellent" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://kwork.ru/portfolio/8836575" target="_blank">
+								<h5 class="projects__info-title">Rappelz</h5>
+								<h6 class="projects__info-subtitle">Email-письмо для сервера MMORPG игры</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка email письма по макету из Figma</li>
+									<li class="projects__info-item">Поддержка популярных почтовых сервисов</li>
+									<li class="projects__info-item">Табличная вёрстка</li>
+								</ul>
+								<div class="projects__link-caption">Перейти к работе</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-collectoman.jpg" width="500" height="320"
+									alt="Скриншот главной страницы сайта Collectoman" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/collectoman/app/" target="_blank">
+								<h5 class="projects__info-title">Collectoman</h5>
+								<h6 class="projects__info-subtitle">Интернет-аукцион</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Многостраничный сайт</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-englishapp.png" width="500" height="320"
+									alt="Скриншот главной страницы приложения Learn English App" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://vue-english-learn-app.netlify.app/" target="_blank">
+								<h5 class="projects__info-title">English Learn App</h5>
+								<h6 class="projects__info-subtitle">Приложение для изучения английского на&nbsp;Vue.js</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Разработка приложения с нуля</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">SPA (Vue.js + Tailwind CSS)</li>
+									<li class="projects__info-item">Анимация</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/projects-stihia.jpg" width="500" height="320"
+									alt="Скриншот главной страницы сайта Stihia Beyond" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/stihiya/dist/index.html" target="_blank">
+								<h5 class="projects__info-title">Stihia Beyond</h5>
+								<h6 class="projects__info-subtitle">Лендинг ко дню космонавтики</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+									<li class="projects__info-item">Лендинг</li>
+									<li class="projects__info-item">Разработка кастомного плеера</li>
+									<li class="projects__info-item">Разработка кастомного слайдера</li>
+								</ul>
+								<div class="projects__link-caption">Перейти на сайт</div>
+							</a>
+						</li>
+						<li class="projects__item">
+							<picture class="projects__picture">
+								<img class="projects__image" src="img/roiup-team.jpg" width="500" height="320"
+									alt="Скриншот демонстрации теста" loading="lazy">
+							</picture>
+							<a class="projects__info" href="https://nmasliy.github.io/roiUp.team/app/index.html" target="_blank">
+								<h5 class="projects__info-title">roiUp.team</h5>
+								<h6 class="projects__info-subtitle">Арбитраж трафика</h6>
+								<ul class="projects__info-list">
+									<li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
 									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
 									<li class="projects__info-item">Лендинг</li>
 									<li class="projects__info-item">Анимация</li>
 								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
-							</a>
-						</li>
-						<li class="projects__item">
-							<picture class="projects__picture">
-								<!-- <source srcset="img/projects-9.webp" type="image/webp"> -->
-								<img class="projects__image" src="img/balance-wheel.png" width="500" height="320"
-									alt="Скриншот демонстрации теста" loading="lazy">
-							</picture>
-							<a class="projects__info" href="https://nmasliy.github.io/balance-wheel-quiz/" target="_blank">
-								<h5 class="projects__info-title">Morehealth</h5>
-								<h6 class="projects__info-subtitle">Тест с результатом в виде колеса баланса</h6>
-								<ul class="projects__info-list">
-									<li class="projects__info-item">Разработка без макета</li>
-									<li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
-									<li class="projects__info-item">Canvas 2D</li>
-									<li class="projects__info-item">Валидация</li>
-								</ul>
-								<div class="projects__info-link">Перейти на сайт</div>
+								<div class="projects__link-caption">Перейти на сайт</div>
 							</a>
 						</li>
 					</ul>
@@ -642,6 +674,25 @@
 						<ul class="reviews__list swiper-wrapper">
 							<li class="reviews__item swiper-slide">
 								<div class="reviews__body">
+									<h5 class="reviews__item-title">Разработка теста с результатом в виде диаграммы</h5>
+									<p class="reviews__text">
+										Спасибо вам за терпение, очень классный получился тест и&nbsp;быстро) задача была: сделать сложный
+										тест с&nbsp;выводом результата в&nbsp;виде колеса баланса и&nbsp;текстовых результатов, все на
+										высоте и&nbsp;на все 100 сделано)
+									</p>
+								</div>
+								<div class="reviews__footer">
+									<img class="reviews__avatar" src="img/reviews-avatar-woman.svg" width="60" height="60"
+										alt="Заглушка аватара заказчика">
+									<div class="reviews__info">
+										<div class="reviews__author">Тоня</div>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
+									</div>
+								</div>
+							</li>
+							<li class="reviews__item swiper-slide">
+								<div class="reviews__body">
 									<h5 class="reviews__item-title">Вёрстка модального окна</h5>
 									<p class="reviews__text">
 										Все выполнено быстро и&nbsp;на&nbsp;профессиональном уровне! Остались очень довольны работой,
@@ -653,7 +704,9 @@
 										alt="Заглушка аватара заказчика">
 									<div class="reviews__info">
 										<div class="reviews__author">Игорь</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://freelancehunt.com/freelancer/nikolaymasliy.html#reviews"
+											target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -673,7 +726,9 @@
 										alt="Фото заказчика Иван">
 									<div class="reviews__info">
 										<div class="reviews__author">Иван</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://freelancehunt.com/freelancer/nikolaymasliy.html#reviews"
+											target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -689,7 +744,9 @@
 										alt="Фото заказчика Екатерина">
 									<div class="reviews__info">
 										<div class="reviews__author">Екатерина</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://freelancehunt.com/freelancer/nikolaymasliy.html#reviews"
+											target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -708,13 +765,14 @@
 										alt="Фото заказчика Игорь">
 									<div class="reviews__info">
 										<div class="reviews__author">Игорь</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
 							<li class="reviews__item swiper-slide">
 								<div class="reviews__body">
-									<h5 class="reviews__item-title">Написание JS скрипта</h5>
+									<h5 class="reviews__item-title">Написание скрипта на JavaScript</h5>
 									<p class="reviews__text">
 										Нужно было сверстать карточки категории. Скрыть опции с подсчетом скрытого количества.
 										Однозначно советую Николая, как специалиста с руками и головой)
@@ -729,7 +787,8 @@
 										alt="Фото заказчика Виталий">
 									<div class="reviews__info">
 										<div class="reviews__author">Виталий</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -750,7 +809,8 @@
 										alt="Фото заказчика Алексей">
 									<div class="reviews__info">
 										<div class="reviews__author">Алексей</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -766,13 +826,14 @@
 										alt="Фото заказчика bioshok333">
 									<div class="reviews__info">
 										<div class="reviews__author">bioshok333</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
 							<li class="reviews__item swiper-slide">
 								<div class="reviews__body">
-									<h5 class="reviews__item-title">Вёрстка интерактивного лендинга</h5>
+									<h5 class="reviews__item-title">Вёрстка модального окна</h5>
 									<p class="reviews__text">
 										Как всегда, очень быстро и качественно!
 									<p class="reviews__text">
@@ -785,7 +846,8 @@
 										alt="Фото заказчика erchleon">
 									<div class="reviews__info">
 										<div class="reviews__author">erchleon</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -797,7 +859,8 @@
 									</p>
 									<p class="reviews__text">
 										Никаких лишних
-										вопросов задавать не приходится, все профессионально, понимает с полуслова. Рекомендую 100% данного
+										вопросов задавать не&nbsp;приходится, все профессионально, понимает с полуслова. Рекомендую 100%
+										данного
 										исполнителя!
 									</p>
 								</div>
@@ -806,7 +869,8 @@
 										alt="Фото заказчика Алексей">
 									<div class="reviews__info">
 										<div class="reviews__author">Алексей</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -822,7 +886,8 @@
 										alt="Фото заказчика Алексей">
 									<div class="reviews__info">
 										<div class="reviews__author">Алексей</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -836,7 +901,8 @@
 										alt="Фото заказчика Игорь">
 									<div class="reviews__info">
 										<div class="reviews__author">Игорь</div>
-										<a class="reviews__link" href="#">Перейти к отзыву</a>
+										<a class="reviews__link" href="https://kwork.ru/user/nmasliy#reviews" target="_blank">Перейти к
+											отзыву</a>
 									</div>
 								</div>
 							</li>
@@ -848,21 +914,169 @@
 			</div>
 		</section>
 
+		<section class="contacts section" id="contacts">
+			<div class="container">
+				<div class="section__head">
+					<h3 class="section__title title">Контакты</h3>
+					<div class="section__title-back">Связаться</div>
+				</div>
+				<div class="contacts__inner">
+					<form class="contacts__form form" action="post">
+						<div class="form__header">
+							<div class="form__head-text">Заполните форму</div>
+							<a class="form__link" href="">
+								<svg class="form__link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
+								</svg>
+								<span class="form__link-text">Скачать резюме</span>
+							</a>
+						</div>
+						<div class="form__body">
+							<input class="form__control" type="text" name="name" placeholder="Введите ваше имя" required>
+							<input class="form__control" type="email" name="email" placeholder="Введите ваш email" required>
+							<textarea class="form__control" name="message" placeholder="Введите сообщение"></textarea>
+						</div>
+						<div class="form__footer">
+							<button class="form__btn btn">Отправить</button>
+							<div class="form__footer-divider">Или</div>
+							<div class="form__socials socials">
+								<ul class="socials__list">
+									<li class="socials__item">
+										<a class="socials__link" href="https://github.com/nmasliy" target="_blank"
+											title="Связаться через Github" aria-label="Связаться через Github">
+											<svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<circle cx="20" cy="20" r="20" fill="white" />
+												<path
+													d="M30.0459 10.94C29.8863 10.5472 29.5784 10.2468 29.1997 10.1144L29.1969 10.1135L29.1943 10.1125L29.1887 10.1106L29.1771 10.1067L29.1522 10.0987C29.1349 10.0933 29.116 10.0878 29.0957 10.0823C29.0552 10.0712 29.0087 10.0601 28.9565 10.0498C28.8518 10.0291 28.7246 10.0118 28.5746 10.0042C28.2734 9.98888 27.8877 10.0129 27.4141 10.1208C26.6244 10.3008 25.5993 10.712 24.3122 11.5545C24.2281 11.6095 24.1428 11.6664 24.0565 11.7252C23.97 11.7034 23.8836 11.6823 23.797 11.662C21.4501 11.1112 19.0208 11.1112 16.6738 11.662C16.5872 11.6823 16.5007 11.7034 16.4143 11.7253C16.3279 11.6664 16.2426 11.6095 16.1584 11.5545C14.87 10.7115 13.8425 10.3004 13.0508 10.1206C12.5761 10.0128 12.1895 9.98893 11.8882 10.0042C11.738 10.0118 11.6108 10.029 11.5063 10.0495C11.4541 10.0597 11.4078 10.0708 11.3674 10.0817C11.3472 10.0872 11.3284 10.0926 11.3112 10.098L11.2865 10.1058L11.2749 10.1097L11.2694 10.1116L11.2667 10.1125L11.264 10.1134C10.882 10.246 10.5717 10.5493 10.4125 10.9459C9.81934 12.4231 9.6619 14.052 9.94756 15.6146C9.96144 15.6905 9.97637 15.7663 9.99234 15.8419C9.9311 15.9306 9.8716 16.0205 9.81385 16.1116C8.9231 17.5163 8.4493 19.1919 8.47151 20.9124C8.47364 24.5972 9.52889 27.1209 11.3135 28.7448C12.3237 29.664 13.4962 30.2266 14.6746 30.5812C14.8094 30.6219 14.9443 30.6596 15.0791 30.695C15.0594 30.7648 15.0411 30.8351 15.0241 30.9059C14.9527 31.2035 14.9054 31.5091 14.8835 31.8192C14.8815 31.8472 14.8803 31.8752 14.8798 31.9033L14.8299 34.6315L14.8296 34.6611C14.8296 34.6696 14.8296 34.6782 14.8296 34.6866C14.7391 34.7095 14.6471 34.7265 14.5541 34.7374C14.2676 34.7712 13.9774 34.7465 13.7001 34.6651C13.4228 34.5836 13.1636 34.4469 12.9375 34.2624C12.7114 34.0779 12.5228 33.8491 12.3828 33.5892L12.3684 33.5631C11.9829 32.8803 11.4504 32.2958 10.8109 31.8542C10.1714 31.4125 9.44175 31.1254 8.67716 31.0148C7.87301 30.8986 7.12872 31.4692 7.01474 32.2895C6.90076 33.1097 7.46024 33.8689 8.26438 33.9852C8.58552 34.0317 8.89246 34.1522 9.16193 34.3384C9.42824 34.5223 9.65112 34.7655 9.81381 35.05C10.1391 35.6488 10.5759 36.1771 11.1 36.6047C11.6287 37.0363 12.2357 37.3568 12.8863 37.5479C13.5198 37.7339 14.1822 37.7937 14.8374 37.7238C14.8388 38.0836 14.8397 38.3597 14.8397 38.5C14.8397 39.3284 15.4635 40 16.233 40H24.2878C25.0572 40 25.6811 39.3284 25.6811 38.5V32.8142C25.719 32.1703 25.6543 31.5248 25.4908 30.9059C25.4683 30.8207 25.4439 30.736 25.4177 30.6519C25.5055 30.6295 25.5933 30.606 25.6811 30.5812C26.8936 30.2406 28.1047 29.6836 29.1452 28.7474C30.9397 27.1325 31.9972 24.6069 31.9993 20.9124C32.0215 19.1919 31.5476 17.5163 30.6569 16.1116C30.5991 16.0204 30.5396 15.9303 30.4781 15.8414C30.494 15.766 30.5088 15.6904 30.5226 15.6146C30.8076 14.049 30.6462 12.4171 30.0459 10.94Z"
+													fill="#161616" />
+											</svg>
+										</a>
+									</li>
+									<li class="socials__item">
+										<a class="socials__link" href="https://t.me/nmasliy" target="_blank"
+											title="Связаться через Telegram" aria-label="Связаться через Telegram">
+											<svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<circle cx="20" cy="20" r="20" fill="white" />
+												<path
+													d="M30.9373 12.6792L27.6173 28.3362C27.3666 29.4411 26.7136 29.7161 25.7856 29.1959L20.7266 25.4681L18.286 27.816C18.0156 28.0864 17.7901 28.3119 17.2691 28.3119L17.633 23.1602L27.0083 14.6885C27.4161 14.3255 26.9195 14.1235 26.375 14.4873L14.7844 21.7858L9.79463 20.2237C8.70944 19.885 8.6898 19.1385 10.0209 18.6175L29.5378 11.0982C30.4415 10.7595 31.232 11.2986 30.9373 12.6792Z"
+													fill="#161616" />
+											</svg>
+										</a>
+									</li>
+									<li class="socials__item">
+										<a class="socials__link" href="mailto:nikolaymasliy76@gmail.com" title="Связаться через email"
+											aria-label="Связаться через email">
+											<svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<g clip-path="url(#clip0_676_1295)">
+													<circle cx="20" cy="20" r="20" fill="white" />
+													<path
+														d="M11.1765 14.4615L18.0147 19.3669C19.1912 20.2109 20.8088 20.2109 21.9853 19.3669L28.8235 14.4614"
+														stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+													<path
+														d="M27.7778 12H12.2222C10.9949 12 10 13.0234 10 14.2857V25.7143C10 26.9767 10.9949 28 12.2222 28H27.7778C29.0051 28 30 26.9767 30 25.7143V14.2857C30 13.0234 29.0051 12 27.7778 12Z"
+														stroke="black" stroke-width="2" stroke-linecap="round" />
+												</g>
+												<defs>
+													<clipPath id="clip0_676_1295">
+														<rect width="40" height="40" fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+										</a>
+									</li>
+									<li class="socials__item">
+										<a class="socials__link" href="#" target="_blank" title="Связаться через Youtube"
+											aria-label="Связаться через Youtube">
+											<svg class="socials__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<g clip-path="url(#clip0_676_1302)">
+													<circle cx="20" cy="20" r="20" fill="white" />
+													<path fill-rule="evenodd" clip-rule="evenodd"
+														d="M17.7963 22.9555V16.5421C20.0731 17.6134 21.8365 18.6483 23.922 19.7641C22.2019 20.7181 20.0731 21.7885 17.7963 22.9555ZM30.4849 13.3523C30.0922 12.8349 29.4228 12.4321 28.7102 12.2988C26.6155 11.901 13.5478 11.8999 11.4543 12.2988C10.8828 12.4059 10.3739 12.6648 9.93675 13.0672C8.09481 14.7768 8.67199 23.9448 9.11597 25.4299C9.30266 26.0727 9.54402 26.5363 9.84797 26.8406C10.2396 27.2429 10.7758 27.5199 11.3916 27.6442C13.1163 28.0009 22.0015 28.2004 28.6737 27.6977C29.2885 27.5906 29.8326 27.3047 30.2618 26.8852C31.9648 25.1825 31.8487 15.4996 30.4849 13.3523Z"
+														fill="black" />
+												</g>
+												<defs>
+													<clipPath id="clip0_676_1302">
+														<rect width="40" height="40" fill="white" />
+													</clipPath>
+												</defs>
+											</svg>
+										</a>
+									</li>
+								</ul>
+								<div class="form__socials-caption">Свяжитесь в соц. сетях</div>
+							</div>
+						</div>
+					</form>
+					<img class="contacts__image" src="img/contacts.svg" width="647" height="542"
+						alt="Открыт браузер, человек отправляет письмо">
+				</div>
+			</div>
+		</section>
+
 		<footer class="footer">
 			<div class="container">
 				<div class="footer__inner">
-					footer
+					<div class="footer__top">
+						<a class="footer__logo logo" href="./">@nmasliy</a>
+						<nav class="footer__nav nav">
+							<ul class="nav__list">
+								<li class="nav__item"><a class="nav__link" href="#benefits">Преимущества</a></li>
+								<li class="nav__item"><a class="nav__link" href="#about">Обо мне</a></li>
+								<li class="nav__item"><a class="nav__link" href="#projects">Портфолио</a></li>
+								<li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
+								<li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__copy">&copy; Маслий Н.А., 2023</div>
+						<a class="footer__policy" href="./policy.html" target="_blank">Политика конфиденциальности</a>
+					</div>
 				</div>
 			</div>
 		</footer>
 
-	</div>
+		<div class="modal" id="modal-form" aria-hidden="true">
+			<div class="modal__wrapper">
+				<div class="modal__inner">
+					<div class="modal__content">
+						<h4 class="modal__title title color-accent">Оставить заявку</h4>
+						<form class="modal__form form" action="post">
+							<div class="form__body">
+								<input class="form__control" type="text" name="name" placeholder="Введите ваше имя" required>
+								<input class="form__control" type="email" name="email" placeholder="Введите ваш email" required>
+								<textarea class="form__control" name="message" placeholder="Введите сообщение"></textarea>
+							</div>
+							<div class="form__footer form__footer--align-center">
+								<button class="form__btn btn">Отправить</button>
+								<a class="form__link" href="">
+									<svg class="form__link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
+									</svg>
+									<span class="form__link-text">Скачать резюме</span>
+								</a>
+							</div>
+						</form>
+					</div>
+					<button class="modal__close" title="Закрыть модальное окно" aria-label="Кнопка закрытия модального окна"
+						data-modal-close></button>
+				</div>
+			</div>
 
-	<script src="js/gsap.min.js"></script>
-	<script src="js/ScrollTrigger.min.js"></script>
-	<script src="js/TextPlugin.min.js"></script>
-	<script src="js/swiper-bundle.min.js"></script>
-	<script src="js/main.js"></script>
+		</div>
+
+		<script src="js/gsap.min.js"></script>
+		<script src="js/ScrollTrigger.min.js"></script>
+		<script src="js/TextPlugin.min.js"></script>
+		<script src="js/swiper-bundle.min.js"></script>
+		<script src="js/vendor.js"></script>
+		<script src="js/main.js"></script>
 </body>
 
 </html>
