@@ -30,12 +30,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const titles = document.querySelectorAll('.section__title');
 
     for (let i = 0; i < titles.length; i++) {
+      // gsap.from(titles[i], {
+      //   opacity: 0,
+      //   y: 60,
+      //   scrollTrigger: {
+      //     trigger: titles[i],
+      //     start: 'top bottom',
+      //   },
+      // });
       gsap.from(titles[i], {
         opacity: 0,
-        y: 60,
+        x: -160,
         scrollTrigger: {
           trigger: titles[i],
           start: 'top bottom',
+          scrub: 1,
+          end: '+=80%',
         },
       });
     }
@@ -43,13 +53,23 @@ window.addEventListener('DOMContentLoaded', () => {
     const titlesBack = document.querySelectorAll('.section__title-back');
 
     for (let i = 0; i < titlesBack.length; i++) {
+      // gsap.from(titlesBack[i], {
+      //   opacity: 0,
+      //   x: 100,
+      //   delay: 0.5,
+      //   scrollTrigger: {
+      //     trigger: titlesBack[i],
+      //     start: 'top bottom',
+      //   },
+      // });
       gsap.from(titlesBack[i], {
         opacity: 0,
-        x: 100,
-        delay: 0.5,
+        x: 160,
         scrollTrigger: {
           trigger: titlesBack[i],
           start: 'top bottom',
+          scrub: 1,
+          end: '+=80%',
         },
       });
     }
