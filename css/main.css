@@ -770,11 +770,6 @@
 	background: url('../img/close-icon.svg') center no-repeat;
 	right: 18px;
 	top: 18px;
-	outline: transparent;
-	border: none;
-	box-shadow: none;
-	background: 0;
-	cursor: pointer;
 }
 
 .modal[aria-hidden="true"] {
