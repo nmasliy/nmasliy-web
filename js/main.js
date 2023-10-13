@@ -156,7 +156,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     gsap.from('.about__info', {
       opacity: 0,
-      y: 60,
+      y: 90,
       scrollTrigger: {
         trigger: '.about__info',
         start: 'top bottom',

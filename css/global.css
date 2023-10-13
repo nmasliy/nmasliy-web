@@ -127,8 +127,7 @@ button {
 }
 
 .section {
-	/* need 100vh fix */
-	min-height: 100vh;
+	min-height: var(--window-height);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

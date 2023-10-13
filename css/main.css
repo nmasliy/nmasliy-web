@@ -26,7 +26,6 @@
 	width: 453px;
 	height: 544px;
 	background: url('../img/bg-decor.svg') center no-repeat;
-	/* transform: rotate(-15deg) translate3d(calc(var(--scrollTop) / 5 * -1), calc(var(--scrollTop) / 5), 0); */
 	transform: rotate(-15deg);
 	left: -277px;
 	top: 90px;
@@ -39,7 +38,6 @@
 	width: 453px;
 	height: 544px;
 	background: url('../img/bg-decor.svg') center no-repeat;
-	/* transform: rotate(22deg) translate3d(calc(var(--scrollTop) / 5), calc(var(--scrollTop) / 5), 0); */
 	transform: rotate(22deg);
 	right: -310px;
 	top: -300px;
