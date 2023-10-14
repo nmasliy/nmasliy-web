@@ -26,18 +26,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function initAnimations() {
+    gsap.config({nullTargetWarn:false});
+    
     // Titles animations
-    const titles = document.querySelectorAll('.section__title');
+    const titles = document.querySelectorAll('.section .title:not([data-animate="false"])');
 
     for (let i = 0; i < titles.length; i++) {
-      // gsap.from(titles[i], {
-      //   opacity: 0,
-      //   y: 60,
-      //   scrollTrigger: {
-      //     trigger: titles[i],
-      //     start: 'top bottom',
-      //   },
-      // });
       gsap.from(titles[i], {
         opacity: 0,
         x: -160,
@@ -50,18 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const titlesBack = document.querySelectorAll('.section__title-back');
+    const titlesBack = document.querySelectorAll('.section__title-back:not([data-animate="false"])');
 
     for (let i = 0; i < titlesBack.length; i++) {
-      // gsap.from(titlesBack[i], {
-      //   opacity: 0,
-      //   x: 100,
-      //   delay: 0.5,
-      //   scrollTrigger: {
-      //     trigger: titlesBack[i],
-      //     start: 'top bottom',
-      //   },
-      // });
       gsap.from(titlesBack[i], {
         opacity: 0,
         x: 160,
@@ -230,7 +215,7 @@ window.addEventListener('DOMContentLoaded', () => {
         trigger: '.skills__content',
         start: 'top bottom',
         scrub: 1,
-        end: '+=90%',
+        end: '+=80%',
       },
     });
     // End Skills animations
@@ -291,7 +276,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function initSliders() {
-    const reviewsSlider = new Swiper('.reviews__slider ', {
+    const reviewsSlider = document.querySelector('.reviews__slider');
+    
+    if (!reviewsSlider) return;
+    
+    const reviewsSwiper = new Swiper(reviewsSlider, {
       loop: true,
       speed: 500,
       centeredSlides: true,
@@ -307,7 +296,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function initModals() {
     const options = {
-      transitionDelay: 400
+      transitionDelay: 350
     };
     
     const modals = new SimpleModal(options);

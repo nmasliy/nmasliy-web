@@ -6,10 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description"
-		content="Адаптивная кроссбраузерная вёрстка сайтов. Заказать профессиональную вёрстку сайта по макету онлайн. Услуги веб-разработки, оставить заявку на разработку сайта." />
+		content="Адаптивная кроссбраузерная вёрстка сайтов. Заказать профессиональную вёрстку сайта по макету онлайн. Услуги веб-разработки, оставить заявку на разработку сайта. Николай Маслий - вёрстка сайтов." />
 	<meta property="og:title" content="Николай Маслий - вёрстка сайтов" />
 	<meta property="og:description"
-		content="Адаптивная кроссбраузерная вёрстка сайтов. Заказать профессиональную вёрстку сайта по макету онлайн. Услуги веб-разработки, оставить заявку на разработку сайта." />
+		content="Адаптивная кроссбраузерная вёрстка сайтов. Заказать профессиональную вёрстку сайта по макету онлайн. Услуги веб-разработки, оставить заявку на разработку сайта. Николай Маслий - вёрстка сайтов." />
 	<meta property="og:type" content="article" />
 	<meta property="og:image" content="img/avatar.jpg" />
 	<meta property="og:image:alt" content="Маслий Николай, Веб-разработчик и фрилансер" />
@@ -43,6 +43,9 @@
 									<li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
 								</ul>
 							</nav>
+							<button class="header__btn btn btn--sm" data-modal-open="modal-form" title="Заполнить форму"
+								aria-label="Заполнить форму">Оставить
+								заявку</button>
 						</div>
 					</div>
 				</header>
@@ -55,6 +58,7 @@
 									<span class="hero__title-post">Фрилансер, <br> Web-разработчик</span>
 								</h1>
 								<div class="hero__footer">
+									<div class="hero__caption">Связаться со мной</div>
 									<div class="hero__socials socials">
 										<ul class="socials__list">
 											<li class="socials__item">
@@ -124,7 +128,9 @@
 											</li>
 										</ul>
 									</div>
-									<button class="hero__btn btn" data-modal-open="modal-form">Оставить заявку</button>
+									<!-- <button class="hero__btn btn" data-modal-open="modal-form" title="Заполнить форму"
+										aria-label="Заполнить форму">Оставить
+										заявку</button> -->
 								</div>
 							</div>
 							<div class="hero__avatar">
@@ -242,8 +248,7 @@
 							<p class="about__text">
 								Я готов помочь вам с решением любых проблем, связанных с визуальной составляющей сайта.
 								Можете ознакомиться с моими работами в <a class="about__link" href="#projects">портфолио</a>, а так же
-								моим
-								<a class="about__link" href="./cv.html"> резюме.</a>
+								моим <a class="about__link" href="./cv.html" target="_blank"> резюме.</a>
 							</p>
 
 						</div>
@@ -262,9 +267,8 @@
 								<li class="about__item">Добавление JavaScript и&nbsp;CSS&nbsp;анимаций</li>
 							</ul>
 							<div class="about__footer">
-								<p class="about__text about__text--fw-medium">Открыт к проектному сотрудничеству / долгосрочной работе
-									со
-									свободным графиком. </p>
+								<p class="about__text"><strong class="fw-medium">Открыт к проектному сотрудничеству / долгосрочной
+										работе со свободным графиком.</strong> </p>
 								<div class="about__footer-row">
 									<button class="about__btn btn" data-modal-open="modal-form">Оставить заявку</button>
 									<div class="about__socials socials">
@@ -359,7 +363,7 @@
 							<ol class="skills__list">
 								<li class="skills__item">
 									<div class="skills__num"></div>
-									<div class="skills__name">HTML5 + БЭМ</div>
+									<div class="skills__name">HTML5</div>
 									<img class="skills__icon" src="img/html-icon.svg" width="58" height="58" alt="Иконка: HTML5">
 									<div class="hint">
 										<button class="hint__btn" title="Что это?" aria-label="Подсказка HTML5"></button>
@@ -971,12 +975,12 @@
 					<form class="contacts__form form" action="post">
 						<div class="form__header">
 							<div class="form__head-text">Заполните форму</div>
-							<a class="form__link" href="">
-								<svg class="form__link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+							<a class="btn-download" href="./files/CV.pdf" target="_blank">
+								<svg class="btn-download__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
 								</svg>
-								<span class="form__link-text">Скачать резюме</span>
+								<span class="btn-download__text">Скачать резюме</span>
 							</a>
 						</div>
 						<div class="form__body">
@@ -1088,7 +1092,7 @@
 			</div>
 		</footer>
 
-		<div class="modal" id="modal-form" aria-hidden="true">
+		<div class="modal" id="modal-form" tabindex="0" aria-hidden="true">
 			<div class="modal__wrapper">
 				<div class="modal__inner">
 					<div class="modal__content">
@@ -1101,12 +1105,12 @@
 							</div>
 							<div class="form__footer form__footer--align-center">
 								<button class="form__btn btn">Отправить</button>
-								<a class="form__link" href="">
-									<svg class="form__link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+								<a class="btn-download" href="./files/CV.pdf" target="_blank">
+									<svg class="btn-download__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
 										xmlns="http://www.w3.org/2000/svg">
 										<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
 									</svg>
-									<span class="form__link-text">Скачать резюме</span>
+									<span class="btn-download__text">Скачать резюме</span>
 								</a>
 							</div>
 						</form>
@@ -1118,12 +1122,14 @@
 
 		</div>
 
-		<script src="js/gsap.min.js"></script>
-		<script src="js/ScrollTrigger.min.js"></script>
-		<script src="js/TextPlugin.min.js"></script>
-		<script src="js/swiper-bundle.min.js"></script>
-		<script src="js/vendor.js"></script>
-		<script src="js/main.js"></script>
+	</div>
+
+	<script src="js/gsap.min.js"></script>
+	<script src="js/ScrollTrigger.min.js"></script>
+	<script src="js/TextPlugin.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/vendor.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,13 @@
 @import url('global.css');
+@import url('components.css');
+
+.no-transitions * {
+	transition: none !important;
+}
+
+.page-wrapper {
+	overflow: hidden;
+}
 
 .header {
 	padding: 40px 0;
@@ -235,11 +244,7 @@
 }
 
 .about__text:not(:last-child) {
-	margin-bottom: 18px;
-}
-
-.about__text--fw-medium {
-	font-weight: 500;
+	margin-bottom: 16px;
 }
 
 .about__list {
@@ -721,65 +726,81 @@
 	color: var(--white);
 }
 
-/* Modal */
-.modal {
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 20;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	background-color: rgba(0, 0, 0, 0.75);
-	opacity: 0;
-	transition: var(--modal-transition);
+.cv {}
+
+.cv__title {}
+
+.cv__inner {
+	display: grid;
+	grid-template-columns: 1fr 450px;
+	gap: 72px;
 }
 
-.modal__wrapper {
-	display: flex;
-	flex-direction: column;
-	padding: 18px;
-	width: 100%;
-	height: var(--window-height);
+.cv__box:not(:last-child) {
+	margin-bottom: 48px;
 }
 
-.modal__inner {
-	position: relative;
-	overflow: auto;
-	margin: auto;
-	border-radius: var(--border-rounded);
-	padding: 24px 48px 36px;
-	width: 100%;
-	max-width: 700px;
-	background-color: var(--black);
+.cv__subtitle {
+	margin-bottom: 24px;
 }
 
-.modal__title {
+.cv__text:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.cv__list {
+	list-style: disc;
+	padding-left: 32px;
+}
+
+.cv__item:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.cv__link {
+	border-bottom: 1px solid currentColor;
+}
+
+.cv__socials {
+	margin-bottom: 24px;
+}
+
+.cv__socials .socials__list {
+	justify-content: center;
+}
+
+.cv__side-info {
 	text-align: center;
-	margin-bottom: 32px;
 }
 
-.modal__close {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background: url('../img/close-icon.svg') center no-repeat;
-	right: 18px;
-	top: 18px;
-}
-
-.modal[aria-hidden="true"] {
-	display: none;
-}
-
-.modal[aria-hidden="false"] {
+.cv__picture {
 	display: block;
+	margin-bottom: 24px;
 }
 
-.modal.is-open {
-	opacity: 1;
+.cv__image {
+	vertical-align: middle;
+	border-radius: var(--border-rounded);
 }
 
-/* End Modal */
+.info__subtitle {
+	margin: 32px 0 16px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.info__text:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.info__list {
+	list-style: disc;
+	padding-left: 32px;
+	margin-bottom: 24px;
+}
+
+.info__item:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+@import url('media.css');
