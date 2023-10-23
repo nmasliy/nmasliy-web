@@ -91,6 +91,8 @@ class SimpleModal {
     await waitFor(1);
 
     modalNode.classList.add('is-open');
+    modalNode.focus();
+    
     if (this.options.disableScroll) {
       this._disableScroll(modalNode);
     }
@@ -160,32 +162,40 @@ class SimpleModal {
     };
 
     document.body.addEventListener('click', initEvents);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        this.closeAll();
+      } else if (e.key === "Tab") {
+        
+      }
+      
+    })
   }
 
   _enableScroll(modalNode) {
-    this.html.style.overflow = '';
-    this.body.style.overflow = '';
-
     if (this.options.fixPageOffset) {
       this.options.fixedBlocks.forEach(el => el.style.paddingRight = '');
 
       modalNode.style.paddingRight = '';
       this.body.style.paddingRight = '';
     }
+
+    this.html.style.overflow = '';
+    this.body.style.overflow = '';
   }
 
   _disableScroll(modalNode) {
-    this.html.style.overflow = 'hidden';
-    this.body.style.overflow = 'hidden';
-
     if (this.options.fixPageOffset) {
       const scrollWidth = window.innerWidth - this.body.offsetWidth + 'px';
-
       this.options.fixedBlocks.forEach(el => el.style.paddingRight = scrollWidth);
 
       modalNode.style.paddingRight = scrollWidth;
       this.body.style.paddingRight = scrollWidth;
     }
+
+    this.html.style.overflow = 'hidden';
+    this.body.style.overflow = 'hidden';
   }
 }
 // End SimpleModal

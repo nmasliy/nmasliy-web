@@ -72,7 +72,7 @@
 }
 
 .logo {
-	font-style: 24px;
+	font-size: 24px;
 	font-weight: 600;
 	display: inline-block;
 	transition: color var(--hover-transition);
@@ -100,17 +100,34 @@
 	display: block;
 	padding: 4px;
 	border-radius: var(--border-rounded);
-	transition: color var(--hover-transition);
+	transition: color var(--hover-transition), text-shadow var(--hover-transition);
+	position: relative;
+}
+
+.nav__link::after {
+	position: absolute;
+	content: "";
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--white);
+	transition: width .5s, background-color .5s;
 }
 
 .nav__link:hover,
 .nav__link:focus,
 .nav__link:active {
 	color: var(--accent);
+	text-shadow: 0 0 6px var(--accent);
+}
+
+.nav__link:hover::after {
+	background-color: var(--accent);
+	width: 100%;
 }
 
 /* End Nav */
-
 
 /* Hint */
 
@@ -174,6 +191,7 @@
 	transition: background-color var(--hover-transition), box-shadow var(--hover-transition);
 	position: relative;
 	color: var(--black);
+	font-size: 20px;
 	font-family: var(--font-secondary);
 	text-transform: uppercase;
 }
@@ -264,6 +282,11 @@
 	margin-bottom: 32px;
 }
 
+.form__head-text {
+	font-size: 24px;
+	font-weight: 500;
+}
+
 .form__body {
 	margin-bottom: 24px;
 }
@@ -339,7 +362,7 @@ textarea.form__control {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.9);
 	opacity: 0;
 	transition: var(--modal-transition);
 }

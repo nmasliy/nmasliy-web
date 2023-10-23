@@ -18,8 +18,7 @@
 	<title>Политика конфиденциальности - nmasliy</title>
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:regular,500,600,700" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Oswald:regular,500,600,700" rel="stylesheet" />
-	<link href="css/reset.css" rel="stylesheet">
-	<link href="css/swiper-bundle.min.css" rel="stylesheet">
+	<link href="css/libs.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 </head>
 
@@ -33,12 +32,15 @@
 					<nav class="header__nav nav">
 						<ul class="nav__list">
 							<li class="nav__item"><a class="nav__link" href="./#benefits">Преимущества</a></li>
-							<li class="nav__item"><a class="nav__link" href="./#about">Обо мне</a></li>
+							<li class="nav__item"><a class="nav__link" href="./#services">Услуги</a></li>
 							<li class="nav__item"><a class="nav__link" href="./#projects">Портфолио</a></li>
 							<li class="nav__item"><a class="nav__link" href="./#reviews">Отзывы</a></li>
 							<li class="nav__item"><a class="nav__link" href="./#contacts">Контакты</a></li>
+							<li class="nav__item"><a class="nav__link" href="./cv.html">Резюме</a></li>
 						</ul>
 					</nav>
+					<button class="header__btn btn btn--sm" data-modal-open="modal-form" title="Заполнить форму"
+						aria-label="Заполнить форму">Оставить заявку</button>
 				</div>
 			</div>
 		</header>
@@ -158,10 +160,11 @@
 						<nav class="footer__nav nav">
 							<ul class="nav__list">
 								<li class="nav__item"><a class="nav__link" href="./#benefits">Преимущества</a></li>
-								<li class="nav__item"><a class="nav__link" href="./#about">Обо мне</a></li>
+								<li class="nav__item"><a class="nav__link" href="./#services">Услуги</a></li>
 								<li class="nav__item"><a class="nav__link" href="./#projects">Портфолио</a></li>
 								<li class="nav__item"><a class="nav__link" href="./#reviews">Отзывы</a></li>
 								<li class="nav__item"><a class="nav__link" href="./#contacts">Контакты</a></li>
+								<li class="nav__item"><a class="nav__link" href="./cv.html">Резюме</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -173,36 +176,35 @@
 			</div>
 		</footer>
 
-		<div class="modal" id="modal-form" aria-hidden="true">
-			<div class="modal__wrapper">
-				<div class="modal__inner">
-					<div class="modal__content">
-						<h4 class="modal__title title color-accent">Оставить заявку</h4>
-						<form class="modal__form form" action="post">
-							<div class="form__body">
-								<input class="form__control" type="text" name="name" placeholder="Введите ваше имя" required>
-								<input class="form__control" type="email" name="email" placeholder="Введите ваш email" required>
-								<textarea class="form__control" name="message" placeholder="Введите сообщение"></textarea>
-							</div>
-							<div class="form__footer form__footer--align-center">
-								<button class="form__btn btn">Отправить</button>
-								<a class="form__link" href="./files/CV.pdf" target="_blank">
-									<svg class="form__link-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
-									</svg>
-									<span class="form__link-text">Скачать резюме</span>
-								</a>
-							</div>
-						</form>
-					</div>
+	</div>
+
+	<div class="modal" id="modal-form" aria-hidden="true" tabindex="-1" role="dialog">
+		<div class="modal__wrapper">
+			<div class="modal__inner">
+				<div class="modal__content">
+					<h4 class="modal__title title color-accent">Оставить заявку</h4>
 					<button class="modal__close" title="Закрыть модальное окно" aria-label="Кнопка закрытия модального окна"
 						data-modal-close></button>
+					<form class="modal__form form" action="post">
+						<div class="form__body">
+							<input class="form__control" type="text" name="name" placeholder="Введите ваше имя" required>
+							<input class="form__control" type="email" name="email" placeholder="Введите ваш email" required>
+							<textarea class="form__control" name="message" placeholder="Введите сообщение"></textarea>
+						</div>
+						<div class="form__footer form__footer--align-center">
+							<button class="form__btn btn">Отправить</button>
+							<a class="btn-download" href="./files/CV.pdf" target="_blank">
+								<svg class="btn-download__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.5 0V7.5H2.5L10 15L17.5 7.5H12.5V0H7.5ZM0 17.5V20H20V17.5H0Z" fill="#F5BF33" />
+								</svg>
+								<span class="btn-download__text">Скачать резюме</span>
+							</a>
+						</div>
+					</form>
 				</div>
 			</div>
-
 		</div>
-
 	</div>
 
 	<script src="js/gsap.min.js"></script>

@@ -1,0 +1,133 @@
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding-top: 0;
+}
+
+.hero::before {
+	position: absolute;
+	content: "";
+	width: 453px;
+	height: 544px;
+	background: url('../../img/bg-decor.svg') center no-repeat;
+	transform: rotate(-15deg);
+	left: -277px;
+	top: 90px;
+	z-index: -1;
+}
+
+.hero::after {
+	position: absolute;
+	content: "";
+	width: 453px;
+	height: 544px;
+	background: url('../../img/bg-decor.svg') center no-repeat;
+	transform: rotate(22deg);
+	right: -310px;
+	top: -300px;
+	z-index: -1;
+}
+
+.hero__wrapper {
+	min-height: var(--window-height);
+	display: flex;
+	flex-direction: column;
+}
+
+.hero__body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+	margin: auto 0;
+	padding-bottom: 32px;
+}
+
+.hero__inner {
+	display: grid;
+	max-width: 1152px;
+	margin: 0 auto;
+	grid-template-columns: 1fr 524px;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 72px;
+}
+
+.hero__title {
+	margin-bottom: 40px;
+}
+
+.hero__title-name {
+	display: block;
+	color: var(--accent);
+	font-size: 64px;
+	font-weight: 500;
+	margin-bottom: 12px;
+}
+
+.hero__title-post {
+	display: block;
+	font-size: 66px;
+	font-weight: 700;
+	line-height: 1.15;
+	padding: 12px 0;
+	font-family: var(--font-secondary);
+	text-transform: uppercase;
+	border-top: 2px solid var(--white);
+	border-bottom: 2px solid var(--white);
+}
+
+.hero__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.hero__caption {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.hero__socials {
+	margin-right: 24px;
+}
+
+.hero__avatar {
+	padding-left: 72px;
+	border-left: 2px solid var(--white);
+}
+
+.hero__image {
+	vertical-align: middle;
+	border-radius: var(--border-rounded);
+	width: 450px;
+}
+
+.hero__ticker {
+	margin-top: auto;
+	color: rgba(255, 255, 255, 0.40);
+	font-size: 42px;
+	font-weight: 700;
+	overflow: hidden;
+	padding-top: 12px;
+}
+
+.hero__ticker-wrapper {
+	display: flex;
+	padding: 4px 0;
+	border-top: 2px solid rgba(255, 255, 255, 0.40);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.40);
+}
+
+.hero__ticker-line {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	animation: ticker 36s linear infinite;
+	transform: translate3d(0, 0, 0);
+}
+
+.hero__ticker-item {
+	flex-shrink: 0;
+	margin-right: 12px;
+}

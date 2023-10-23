@@ -1,0 +1,10 @@
+.contacts__inner {
+	display: grid;
+	grid-template-columns: 1.33fr 1fr;
+	gap: 48px;
+}
+
+.contacts__image {
+	display: inline-block;
+	vertical-align: middle;
+}

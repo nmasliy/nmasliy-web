@@ -19,8 +19,6 @@
 	--hover-transition: .25s ease;
 	--menu-transition: .4s ease;
 	--modal-transition: .35s ease;
-
-	--scrollTop: 0;
 }
 
 *,
@@ -59,7 +57,6 @@ body {
 	font-size: 20px;
 	line-height: normal;
 	min-height: 100vh;
-	color: var(--text);
 	background-color: var(--black);
 	color: var(--white);
 	font-family: var(--font);

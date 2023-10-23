@@ -3,14 +3,11 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('no-transitions');
 
-  window.addEventListener('scroll', e => {
-    document.querySelector(':root').style.setProperty('--scrollTop', `${window.scrollY}px`);
-  })
-
   initShowMoreProjects();
   initAnimations();
   initSliders();
   initModals();
+  initScroll();
 
   function initShowMoreProjects() {
     const projectsBtn = document.querySelector('.projects__btn-wrapper');
@@ -26,10 +23,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function initAnimations() {
-    gsap.config({nullTargetWarn:false});
-    
+    gsap.config({ nullTargetWarn: false });
+
     // Titles animations
-    const titles = document.querySelectorAll('.section .title:not([data-animate="false"])');
+    const titles = document.querySelectorAll(
+      '.section .title:not([data-animate="false"])'
+    );
 
     for (let i = 0; i < titles.length; i++) {
       gsap.from(titles[i], {
@@ -44,7 +43,9 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const titlesBack = document.querySelectorAll('.section__title-back:not([data-animate="false"])');
+    const titlesBack = document.querySelectorAll(
+      '.section__title-back:not([data-animate="false"])'
+    );
 
     for (let i = 0; i < titlesBack.length; i++) {
       gsap.from(titlesBack[i], {
@@ -273,13 +274,45 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
     // End Contacts animations
+
+    // Services animations
+    const servicesItems = document.querySelectorAll('.services__item');
+
+    for (let i = 0; i < servicesItems.length; i++) {
+      const box = servicesItems[i].querySelector('.services__box');
+      const info = servicesItems[i].querySelector('.services__info');
+
+      gsap.from(box, {
+        opacity: 0,
+        x: (i + 1) % 2 === 0 ? 160 : -160,
+        scrollTrigger: {
+          trigger: box,
+          start: 'top bottom',
+          scrub: 1,
+          end: '+=80%',
+        },
+      });
+
+      gsap.from(info, {
+        opacity: 0,
+        x: (i + 1) % 2 === 0 ? -160 : 160,
+        scrollTrigger: {
+          trigger: info,
+          start: 'top bottom',
+          scrub: 1,
+          end: '+=80%',
+        },
+      });
+    }
+
+    // End Services animations
   }
 
   function initSliders() {
     const reviewsSlider = document.querySelector('.reviews__slider');
-    
+
     if (!reviewsSlider) return;
-    
+
     const reviewsSwiper = new Swiper(reviewsSlider, {
       loop: true,
       speed: 500,
@@ -291,16 +324,30 @@ window.addEventListener('DOMContentLoaded', () => {
         nextEl: '.reviews__btn--next',
         prevEl: '.reviews__btn--prev',
       },
+      breakpoints: {
+        320: {
+          slidesPerView: 'auto',
+        },
+        1581: {
+          slidesPerView: 3,
+        },
+      },
     });
   }
 
   function initModals() {
     const options = {
-      transitionDelay: 350
+      transitionDelay: 350,
+      onOpen: () => {
+        document.querySelector('.page-wrapper').ariaHidden = true;
+      },
+      onClose: () => {
+        document.querySelector('.page-wrapper').ariaHidden = false;
+      },
     };
-    
+
     const modals = new SimpleModal(options);
-    
+
     modals.init();
   }
 });

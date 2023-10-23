@@ -1,0 +1,30 @@
+.footer {
+	padding: 24px 0;
+}
+
+.footer__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 24px;
+}
+
+.footer__logo {
+	margin-right: 16px;
+}
+
+.footer__bottom {
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__policy {
+	transition: color var(--hover-transition);
+}
+
+.footer__policy:hover {
+	color: var(--white);
+}

@@ -1,3 +1,60 @@
+@media screen and (max-width: 1800px) {
+	body {
+		font-size: 18px;
+	}
+
+	:root {
+		--content-width: 1360px;
+		--section-padding: 48px;
+	}
+
+	.btn {
+		font-size: 18px;
+	}
+
+	.btn--sm {
+		font-size: 16px;
+	}
+
+	.title {
+		font-size: 50px;
+	}
+
+	.section__title-back {
+		font-size: 110px;
+	}
+
+	.hero__inner {
+		max-width: 1060px;
+	}
+
+	.hero__title-name {
+		font-size: 58px;
+	}
+
+	.hero__title-post {
+		font-size: 60px;
+	}
+
+	.hero__ticker {
+		font-size: 38px;
+	}
+
+	.hero__caption,
+	.logo {
+		font-size: 20px;
+	}
+
+	.hero::before {
+		left: -372px;
+	}
+
+	.hero::after {
+		right: -360px;
+	}
+
+}
+
 @media screen and (max-width: 1024px) {
 	.header__overlay {
 		position: fixed;
