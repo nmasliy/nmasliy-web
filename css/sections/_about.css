@@ -52,7 +52,7 @@
 }
 
 .about__item {
-	border-radius: var(--border-rounded);
+	border-radius: var(--rounded);
 	border: 2px solid var(--accent);
 	padding: 12px 12px 12px 44px;
 	position: relative;

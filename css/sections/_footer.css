@@ -15,6 +15,7 @@
 
 .footer__bottom {
 	font-size: 16px;
+	gap: 18px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -27,4 +28,17 @@
 
 .footer__policy:hover {
 	color: var(--white);
+}
+
+.footer__payments-list {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.footer__payments-item {
+}
+
+.footer__payments-icon {
+	vertical-align: middle;
 }

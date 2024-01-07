@@ -3,12 +3,43 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 window.addEventListener('DOMContentLoaded', () => {
   document.body.classList.remove('no-transitions');
 
+  initMenu();
   initShowMoreProjects();
   initAnimations();
   initSliders();
-  initModals();
-  initScroll();
+  initForms();
 
+  // Menu
+  function initMenu() {
+    const header = document.querySelector('.header');
+
+    if (!header) return;
+
+    const headerHeight = header.offsetHeight;
+
+    const menu = new Menu({
+      menu: document.querySelector('.header__menu'),
+      burger: document.querySelector('.header__burger'),
+      overlay: document.querySelector('.overlay'),
+      navLinks: document.querySelectorAll('.header__nav a'),
+      burgerCaption: 'Открыть меню',
+      burgerActiveCaption: 'Закрыть меню',
+      transitionDelay: 400,
+      breakpoint: 1200,
+      onOpen: () =>
+        document.querySelector('.header').classList.add('is-active'),
+      onClose: () =>
+        document.querySelector('.header').classList.remove('is-active'),
+    });
+
+    window.addEventListener('scroll', (e) => {
+      window.pageYOffset > headerHeight
+        ? header.classList.add('is-fixed')
+        : header.classList.remove('is-fixed');
+    });
+  }
+
+  // Show More Projects
   function initShowMoreProjects() {
     const projectsBtn = document.querySelector('.projects__btn-wrapper');
 
@@ -22,7 +53,15 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Animations
   function initAnimations() {
+    if (window.innerWidth <= 991) return;
+
+    document.body.addEventListener('mousemove', (e) => {
+      document.documentElement.style.setProperty('--clientX', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--clientY', `${e.clientY}px`);
+    });
+
     gsap.config({ nullTargetWarn: false });
 
     // Titles animations
@@ -308,6 +347,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // End Services animations
   }
 
+  // Sliders
   function initSliders() {
     const reviewsSlider = document.querySelector('.reviews__slider');
 
@@ -317,6 +357,9 @@ window.addEventListener('DOMContentLoaded', () => {
       loop: true,
       speed: 500,
       centeredSlides: true,
+      keyboard: {
+        enabled: true
+      },
       initialSlide: 1,
       slidesPerView: 3,
       spaceBetween: 44,
@@ -335,9 +378,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function initModals() {
+  // Forms & Modals
+  function initForms() {
+    // Modals
     const options = {
       transitionDelay: 350,
+      fixedBlocks: [document.querySelector('.header')],
       onOpen: () => {
         document.querySelector('.page-wrapper').ariaHidden = true;
       },
@@ -349,5 +395,55 @@ window.addEventListener('DOMContentLoaded', () => {
     const modals = new SimpleModal(options);
 
     modals.init();
+    // End Modals
+
+    const forms = document.querySelectorAll('.form');
+    const servicesButtons = document.querySelectorAll('.services__btn');
+
+    servicesButtons.forEach((btn) => {
+      const parent = btn.closest('.services__item');
+      const modal = document.querySelector('#modal-form');
+
+      if (!parent || !modal) return;
+
+      const title = parent.querySelector('.services__subtitle');
+      const input = modal.querySelector('input[name="request-from"]');
+
+      if (!title || !input) return;
+
+      input.value = title.textContent;
+    });
+
+    forms.forEach((form) => {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch('telegram.php', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status}`);
+          }
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            return response.json();
+          } else {
+            return response.text(); 
+          }
+        })
+        .then(data => {
+          console.log("Success:", data);
+          modals.open('modal-success');
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          modals.open('modal-error');
+        });
+      });
+    });
   }
 });

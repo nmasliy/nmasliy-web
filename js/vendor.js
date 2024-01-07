@@ -1,3 +1,7 @@
+/**
+ * https:www.github.com/nmasliy
+ */
+
 const html = document.querySelector(':root');
 
 const throttle = (func, delay = 250) => {
@@ -30,15 +34,17 @@ const throttle = (func, delay = 250) => {
 
 const waitFor = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
-// 100 vh fix
-const changeHeight = () => {
+// Update CSS Vars
+const updateCSSVars = () => {
   html.style.setProperty('--window-height', `${window.innerHeight}px`);
+  html.style.setProperty('--header-height', `${document.querySelector('.header').offsetHeight}px`);
 };
 
-changeHeight();
+updateCSSVars();
 
-window.addEventListener('resize', throttle(changeHeight));
-// End 100 vh fix
+window.addEventListener('resize', throttle(updateCSSVars));
+
+//End Update CSS Vars
 
 // SimpleModal
 class SimpleModal {
@@ -49,12 +55,13 @@ class SimpleModal {
       onOpen: () => {},
       beforeClose: () => {},
       onClose: () => {},
+      onStartOpen: () => {},
       disableScroll: true,
-      transitionDelay: 250,
+      transitionDelay: 300,
       nested: true,
       overlayCloseAll: true,
       fixPageOffset: true,
-      fixedBlocks: []
+      fixedBlocks: [],
     };
     this.options = { ...defaultOptions, ...options };
     this.html = document.querySelector('html');
@@ -85,17 +92,20 @@ class SimpleModal {
 
     this.options.beforeOpen(modalNode);
 
+
+    if (this.options.disableScroll) {
+      this._disableScroll(modalNode);
+    }
+
     modalNode.setAttribute('aria-hidden', false);
     this.isAnimated = true;
 
     await waitFor(1);
 
+    this.options.onStartOpen(modalNode);
+
     modalNode.classList.add('is-open');
     modalNode.focus();
-    
-    if (this.options.disableScroll) {
-      this._disableScroll(modalNode);
-    }
 
     await waitFor(this.options.transitionDelay);
 
@@ -112,12 +122,12 @@ class SimpleModal {
 
     this.isAnimated = true;
     modalNode.classList.remove('is-open');
-
     if (this.options.disableScroll && this.activeModalNodes.length === 1) {
       this._enableScroll(modalNode);
     }
 
     await waitFor(this.options.transitionDelay);
+
 
     modalNode.setAttribute('aria-hidden', true);
     this.isAnimated = false;
@@ -163,19 +173,17 @@ class SimpleModal {
 
     document.body.addEventListener('click', initEvents);
 
-    document.addEventListener('keydown', e => {
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.closeAll();
-      } else if (e.key === "Tab") {
-        
+      } else if (e.key === 'Tab') {
       }
-      
-    })
+    });
   }
 
   _enableScroll(modalNode) {
     if (this.options.fixPageOffset) {
-      this.options.fixedBlocks.forEach(el => el.style.paddingRight = '');
+      this.options.fixedBlocks.forEach((el) => (el.style.paddingRight = ''));
 
       modalNode.style.paddingRight = '';
       this.body.style.paddingRight = '';
@@ -188,7 +196,9 @@ class SimpleModal {
   _disableScroll(modalNode) {
     if (this.options.fixPageOffset) {
       const scrollWidth = window.innerWidth - this.body.offsetWidth + 'px';
-      this.options.fixedBlocks.forEach(el => el.style.paddingRight = scrollWidth);
+      this.options.fixedBlocks.forEach(
+        (el) => (el.style.paddingRight = scrollWidth)
+      );
 
       modalNode.style.paddingRight = scrollWidth;
       this.body.style.paddingRight = scrollWidth;
@@ -203,7 +213,6 @@ class SimpleModal {
 // Menu
 class Menu {
   constructor(options) {
-    this.root = document.querySelector(':root');
     this.html = document.querySelector('html');
     this.isInit = false;
     this.isAnimating = false;
@@ -218,7 +227,7 @@ class Menu {
       burgerActiveCaption: 'Закрыть меню',
       transitionDelay: 400,
       transitionEasing: 'ease-in-out',
-      breakpoint: 1024,
+      breakpoint: 1200,
       display: 'block',
       disableScroll: true,
       onOpen: () => {},
@@ -235,20 +244,28 @@ class Menu {
   async open() {
     if (this.isAnimating) return;
 
-    this.options.onOpen();
-    this.options.menu.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
-    this.options.burger.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
+    this.isAnimating = true;
 
+    this.options.onOpen();
+    this.options.menu.style.transition =
+      this.options.transitionDelay / 1000 + 's' + this.options.transitionEasing;
+    this.options.burger.style.transition =
+      this.options.transitionDelay / 1000 + 's' + this.options.transitionEasing;
 
     if (this.options.overlay) {
-      this.options.overlay.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
+      this.options.overlay.style.transition =
+        this.options.transitionDelay / 1000 +
+        's' +
+        this.options.transitionEasing;
       this.options.overlay.style.display = 'block';
     }
 
     this.options.menu.style.display = this.options.display;
     this.options.burger.setAttribute('aria-expanded', 'true');
-    this.options.burger.setAttribute('aria-label', this.options.burgerActiveCaption);
-    this.isAnimating = true;
+    this.options.burger.setAttribute(
+      'aria-label',
+      this.options.burgerActiveCaption
+    );
 
     if (this.options.disableScroll) {
       this.html.classList.add('disable-scroll');
@@ -278,13 +295,20 @@ class Menu {
   async close() {
     if (this.isAnimating) return;
 
+    this.isAnimating = true;
+
     this.options.onClose();
 
-    this.options.menu.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
-    this.options.burger.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
+    this.options.menu.style.transition =
+      this.options.transitionDelay / 1000 + 's' + this.options.transitionEasing;
+    this.options.burger.style.transition =
+      this.options.transitionDelay / 1000 + 's' + this.options.transitionEasing;
 
     if (this.options.overlay) {
-      this.options.overlay.style.transition = this.options.transitionDelay /  1000 + 's' + this.options.transitionEasing;
+      this.options.overlay.style.transition =
+        this.options.transitionDelay / 1000 +
+        's' +
+        this.options.transitionEasing;
       this.options.overlay.classList.remove('is-active');
     }
 
@@ -313,7 +337,9 @@ class Menu {
   }
 
   toggle() {
-    this.options.menu.classList.contains('is-active') ? this.close() : this.open();
+    this.options.menu.classList.contains('is-active')
+      ? this.close()
+      : this.open();
   }
 
   _init() {
@@ -326,14 +352,18 @@ class Menu {
     this.options.burger?.addEventListener('click', this.toggleHandler);
     this.options.close?.addEventListener('click', this.closeHandler);
     this.options.overlay?.addEventListener('click', this.closeHandler);
-    this.options.navLinks?.forEach((el) => el.addEventListener('click', this.closeHandler));
+    this.options.navLinks?.forEach((el) =>
+      el.addEventListener('click', this.closeHandler)
+    );
   }
 
   _removeListeners() {
     this.options.burger?.removeEventListener('click', this.toggleHandler);
     this.options.close?.removeEventListener('click', this.closeHandler);
     this.options.overlay?.removeEventListener('click', this.closeHandler);
-    this.options.navLinks?.forEach((el) => el.removeEventListener('click', this.closeHandler));
+    this.options.navLinks?.forEach((el) =>
+      el.removeEventListener('click', this.closeHandler)
+    );
   }
 
   _events() {
@@ -349,7 +379,7 @@ class Menu {
         this._removeListeners();
         this.isInit = false;
       }
-    }
+    };
 
     initEvents();
 

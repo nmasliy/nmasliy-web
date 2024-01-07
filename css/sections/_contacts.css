@@ -4,6 +4,10 @@
 	gap: 48px;
 }
 
+.contacts__form {
+	max-width: 600px;
+}
+
 .contacts__image {
 	display: inline-block;
 	vertical-align: middle;

@@ -41,5 +41,5 @@
 
 .cv__image {
 	vertical-align: middle;
-	border-radius: var(--border-rounded);
+	border-radius: var(--rounded);
 }

@@ -6,7 +6,7 @@
 
 .benefits__item {
 	position: relative;
-	border-radius: var(--border-rounded);
+	border-radius: var(--rounded);
 	padding: 52px 24px 24px;
 	border: 2px solid var(--accent);
 	color: var(--white);
