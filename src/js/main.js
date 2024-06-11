@@ -472,6 +472,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const formData = new FormData(form);
 
+				if (formData.get('mike').trim() !== '') {
+          return;
+        }
+
         fetch('telegram.php', {
           method: 'POST',
           body: formData,
@@ -490,6 +494,7 @@ window.addEventListener('DOMContentLoaded', () => {
           .then(data => {
             console.log("Success:", data);
             modals.open('modal-success');
+            form.reset();
           })
           .catch(error => {
             console.error("Error:", error);

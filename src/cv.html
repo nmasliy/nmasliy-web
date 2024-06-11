@@ -69,11 +69,11 @@
 						<div class="cv__content">
 							<div class="cv__box">
 								<h4 class="cv__subtitle subtitle">Обо мне</h4>
-								<p class="cv__text">Мне 24 года. Я занимаюсь вёрсткой сайтов с 2019 года.</p>
 								<p class="cv__text">Могу сверстать сайт любой сложности, а так же, внести изменения на существующий
 									сайт, что-то исправить, доработать, увеличить скорость загрузки, добавить анимацию.</p>
 								<p class="cv__text">Я готов помочь вам с решением любых проблем, связанных с визуальной составляющей
-									сайта.</p>
+									сайта. Основное направление моей работы - Frontend, но так же беру в работу многие другие задачи,
+									связанные с веб-разработкой в целом. </p>
 								<p class="cv__text"><strong class="fw-medium">Открыт к проектному сотрудничеству / долгосрочной работе
 										со&nbsp;свободным графиком.</strong></p>
 							</div>
@@ -103,12 +103,13 @@
 							<div class="cv__box">
 								<h4 class="cv__subtitle subtitle">Опыт работы</h4>
 								<p class="cv__text">Занимаюсь вёрсткой сайтов как фрилансер и сотрудничаю с компаниями с 2020 года.</p>
-								<p class="cv__text">Выполнил более 100 проектов по следующим направлениям:</p>
+								<p class="cv__text">Выполнил более 145 проектов по направлениям:</p>
 								<ul class="cv__list">
 									<li class="cv__item">Адаптивная вёрстка сайтов по макету</li>
 									<li class="cv__item">Внесение правок и исправление ошибок на готовых сайтах</li>
 									<li class="cv__item">Оптимизация скорости загрузки страниц</li>
 									<li class="cv__item">Добавление JavaScript и CSS анимаций на сайт</li>
+									<li class="cv__item">Разработка на JavaScript</li>
 								</ul>
 							</div>
 
@@ -119,7 +120,6 @@
 								<img class="cv__image" src="./img/avatar.jpg" width="400" height="400" alt="Николай Маслий">
 							</picture>
 							<div class="cv__side-info">
-
 								<div class="cv__box">
 									<h4 class="cv__subtitle subtitle">Контакты</h4>
 									<p class="cv__text"><b>Github:</b> <a class="cv__link" href="https://github.com/nmasliy"
@@ -167,7 +167,8 @@
 									required>
 								<label class="visually-hidden" for="message">Введите сообщение</label>
 								<textarea class="form__control" name="message" id="message" placeholder="Введите сообщение"></textarea>
-								<input type="hidden" name="request-from">
+								<input type="hidden" name="request-from" value="Контакты">
+								<input type="hidden" name="request-url" value="CV">
 								<p class="form__caption">
 									Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете свое согласие на&nbsp;обработку ваших личных данных
 									в&nbsp;соответствии
@@ -295,7 +296,9 @@
 							<label class="visually-hidden" for="message-modal">Введите сообщение</label>
 							<textarea class="form__control" name="message" id="message-modal"
 								placeholder="Введите сообщение"></textarea>
-							<input type="hidden" name="request-from">
+							<input class="form__mike" type="text" name="mike" />
+							<input type="hidden" name="request-from" value="Хедер">
+							<input type="hidden" name="request-url" value="CV">
 							<p class="form__caption">
 								Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете свое согласие на&nbsp;обработку ваших личных данных
 								в&nbsp;соответствии

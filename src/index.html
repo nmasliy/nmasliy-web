@@ -873,18 +873,53 @@
             <ul class="projects__list">
               <li class="projects__item">
                 <picture class="projects__picture">
+                  <source srcset="img/projects-topskin.webp" type="image/webp">
+                  <img class="projects__image" src="./img/projects-topskin.jpg" width="500" height="320"
+                    alt="Скриншот сайта TopSkin" loading="lazy">
+                </picture>
+                <a class="projects__info" href="https://nmasliy.ru/projects/topskin/" target="_blank">
+                  <h5 class="projects__info-title">TopSkin</h5>
+                  <h6 class="projects__info-subtitle">Защитные плёнки для автомобилей</h6>
+                  <ul class="projects__info-list">
+                    <li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+                    <li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+                    <li class="projects__info-item">Анимация</li>
+                    <li class="projects__info-item">Отправка форм на почту</li>
+                  </ul>
+                  <div class="projects__link-caption">Перейти на сайт</div>
+                </a>
+              </li>
+              <li class="projects__item">
+                <picture class="projects__picture">
+                  <source srcset="img/projects-president.webp" type="image/webp">
+                  <img class="projects__image" src="./img/projects-president.jpg" width="500" height="320"
+                    alt="Скриншот сайта President" loading="lazy">
+                </picture>
+                <a class="projects__info" href="https://nmasliy.ru/projects/president/" target="_blank">
+                  <h5 class="projects__info-title">President</h5>
+                  <h6 class="projects__info-subtitle">Кадровое агенство</h6>
+                  <ul class="projects__info-list">
+                    <li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
+                    <li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
+                    <li class="projects__info-item">Отправка форм на почту</li>
+                  </ul>
+                  <div class="projects__link-caption">Перейти на сайт</div>
+                </a>
+              </li>
+              <li class="projects__item">
+                <picture class="projects__picture">
                   <source srcset="img/projects-pulsar.webp" type="image/webp">
                   <img class="projects__image" src="./img/projects-pulsar.jpg" width="500" height="320"
                     alt="Скриншот сайта Pulsar" loading="lazy">
                 </picture>
-                <a class="projects__info" href="https://kodix-new-year.vercel.app/" target="_blank">
+                <a class="projects__info" href="https://nmasliy.ru/projects/pulsar/" target="_blank">
                   <h5 class="projects__info-title">Pulsar</h5>
                   <h6 class="projects__info-subtitle">Лендинг по подбору магнитол</h6>
                   <ul class="projects__info-list">
                     <li class="projects__info-item">Вёрстка сайта по макету из Figma</li>
                     <li class="projects__info-item">Адаптивная кроссбраузерная вёрстка</li>
                     <li class="projects__info-item">Квиз</li>
-                    <li class="projects__info-item">Отправка форм</li>
+                    <li class="projects__info-item">Отправка форм на почту</li>
                   </ul>
                   <div class="projects__link-caption">Перейти на сайт</div>
                 </a>
@@ -1657,7 +1692,8 @@
                   required>
                 <label class="visually-hidden" for="message">Введите сообщение</label>
                 <textarea class="form__control" name="message" id="message" placeholder="Введите сообщение"></textarea>
-                <input type="hidden" name="request-from">
+                <input type="hidden" name="request-from" value="Контакты">
+                <input type="hidden" name="request-url" value="Главная">
                 <p class="form__caption">
                   Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете свое согласие на&nbsp;обработку ваших личных данных
                   в&nbsp;соответствии
@@ -1730,6 +1766,7 @@
                   <div class="form__socials-caption">Свяжитесь в соц. сетях</div>
                 </div>
               </div>
+              <input class="form__mike" type="text" name="mike" />
             </form>
             <img class="contacts__image" src="./img/contacts.svg" width="615" height="530" loading="lazy"
               alt="Человек отправляет письмо">
@@ -1788,7 +1825,9 @@
               <label class="visually-hidden" for="message-modal">Введите сообщение</label>
               <textarea class="form__control" name="message" id="message-modal"
                 placeholder="Введите сообщение"></textarea>
-              <input type="hidden" name="request-from">
+              <input class="form__mike" type="text" name="mike" />
+              <input type="hidden" name="request-from" value="Хедер">
+              <input type="hidden" name="request-url" value="Главная">
               <p class="form__caption">
                 Нажимая на&nbsp;кнопку, вы&nbsp;подтверждаете свое согласие на&nbsp;обработку ваших личных данных
                 в&nbsp;соответствии
