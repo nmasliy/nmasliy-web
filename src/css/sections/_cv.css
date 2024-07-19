@@ -21,6 +21,16 @@
 	padding-left: 32px;
 }
 
+.cv__list-title {
+	font-size: 20px;
+	margin-bottom: 16px;
+	font-weight: 700;
+}
+
+.cv__list:not(:last-child) {
+	margin-bottom: 28px;
+}
+
 .cv__item:not(:last-child) {
 	margin-bottom: 8px;
 }

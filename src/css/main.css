@@ -37,6 +37,10 @@
   padding-top: var(--header-height);
 }
 
+.g-recaptcha {
+  margin-bottom: 12px;
+}
+
 /* Media */
 
 @media screen and (max-width: 1800px) {

@@ -30,7 +30,7 @@
 	outline-offset: 3px;
 	outline-color: var(--white);
 	box-sizing: border-box;
-	scrollbar-color: var(--white) var(--accent-dark);
+	scrollbar-color: var(--black) var(--white) ;
   scrollbar-width: thin;
 }
 
