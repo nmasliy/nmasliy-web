@@ -16,6 +16,10 @@
   border: 0;
 }
 
+.border-b {
+  border-bottom: 1px solid currentColor;
+}
+
 /* Section */
 .section {
   min-height: var(--window-height);

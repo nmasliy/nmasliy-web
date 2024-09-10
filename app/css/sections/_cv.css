@@ -6,6 +6,10 @@
 	gap: 128px;
 }
 
+.cv__box {
+	max-width: 742px;
+}
+
 .cv__box:not(:last-child) {
 	margin-bottom: 48px;
 }
