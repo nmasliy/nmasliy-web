@@ -443,6 +443,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     const modals = new SimpleModal(options);
+    const inputs = document.querySelectorAll('input, textarea');
 
     modals.init();
     // End Modals
@@ -502,5 +503,12 @@ window.addEventListener('DOMContentLoaded', () => {
           });
       });
     });
+
+    inputs.forEach((input) => {
+      input.addEventListener('input', function() {
+          this.value = this.value.replace(/[<>]/g, '');
+      });
+  });
+  
   }
 });
