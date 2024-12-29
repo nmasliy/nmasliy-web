@@ -7,10 +7,10 @@ const gulpif = require('gulp-if');
 const notify = require('gulp-notify');
 const image = require('gulp-imagemin');
 const webp = require('gulp-webp');
-const plumber = require('gulp-plumber');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const sass = require('gulp-sass')(require('sass'));
 
 // paths
 const srcFolder = './src';
@@ -19,7 +19,7 @@ const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
   buildImgFolder: `${buildFolder}/img`,
-  srcCss: `${srcFolder}/css/**/*.css`,
+  srcScss: `${srcFolder}/scss/**/*.scss`,
   buildCssFolder: `${buildFolder}/css`,
   srcFullJs: `${srcFolder}/js/**/*.js`,
   srcMinJs: `${srcFolder}/js/**/*.min.js`,
@@ -36,41 +36,39 @@ const clean = () => {
 };
 
 const styles = () => {
-  return (
-    src(paths.srcCss, { sourcemaps: !isProd })
-      .pipe(
-        plumber(
-          notify.onError({
-            title: 'SCSS',
-            message: 'Error: <%= error.message %>',
-          })
-        )
-      )
-      .pipe(
-        autoprefixer({
-          cascade: false,
-          grid: true,
-          overrideBrowserslist: ['last 8 versions'],
+  return src(paths.srcScss, { sourcemaps: !isProd })
+    .pipe(
+      sass({
+        style: isProd ? 'compressed' : 'expanded',
+        sourceMap: isProd,
+      }).on('error', sass.logError)
+    )
+    .pipe(
+      autoprefixer({
+        cascade: false,
+        grid: true,
+        overrideBrowserslist: ['last 8 versions'],
+      })
+    )
+    .pipe(
+      gulpif(
+        isProd,
+        cleanCSS({
+          level: 2,
         })
       )
-      .pipe(
-        gulpif(
-          isProd,
-          cleanCSS({
-            level: 2,
-          })
-        )
-      )
-      .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
-      .pipe(browserSync.stream())
-  );
+    )
+    .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
+    .pipe(browserSync.stream());
 };
 
 const scripts = () => {
   return src([paths.srcFullJs, `!${paths.srcMinJs}`])
-    .pipe(babel({
-      presets: ['@babel/preset-env']
-    }))
+    .pipe(
+      babel({
+        presets: ['@babel/preset-env'],
+      })
+    )
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(dest(paths.buildJsFolder))
@@ -85,8 +83,7 @@ const scriptsLibs = () => {
 };
 
 const resources = () => {
-  return src(`${paths.resourcesFolder}/**/*.*`)
-    .pipe(dest(buildFolder));
+  return src(`${paths.resourcesFolder}/**/*.*`).pipe(dest(buildFolder));
 };
 
 const images = () => {
@@ -127,7 +124,7 @@ const watchFiles = () => {
     },
   });
 
-  watch(paths.srcCss, styles);
+  watch(paths.srcScss, styles);
   watch(paths.srcFullJs, scripts);
   watch(paths.srcMinJs, scriptsLibs);
   watch(`${srcFolder}/**/*.html`, html);
@@ -162,5 +159,5 @@ exports.build = series(
   styles,
   resources,
   images,
-  webpImages,
+  webpImages
 );

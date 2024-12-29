@@ -1,20 +1,20 @@
 /* Base */
-@import url('./_fonts.css');
-@import url('./_global.css');
-@import url('./_components.css');
+@use './fonts';
+@use './global';
+@use './components';
 
 /* Sections */
-@import url('./sections/_header.css');
-@import url('./sections/_hero.css');
-@import url('./sections/_benefits.css');
-@import url('./sections/_services.css');
-@import url('./sections/_skills.css');
-@import url('./sections/_projects.css');
-@import url('./sections/_reviews.css');
-@import url('./sections/_contacts.css');
-@import url('./sections/_cv.css');
-@import url('./sections/_info.css');
-@import url('./sections/_footer.css');
+@use './sections/header';
+@use './sections/hero';
+@use './sections/benefits';
+@use './sections/services';
+@use './sections/skills';
+@use './sections/projects';
+@use './sections/reviews';
+@use './sections/contacts';
+@use './sections/cv';
+@use './sections/info';
+@use './sections/footer';
 
 /* Main */
 .no-transitions * {
